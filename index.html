@@ -1,19 +1,38 @@
 <!doctype html>
 <html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1c151b">
 <title>The Slayers | Geocaching field journal</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#eff3ed;color:#142e25;font:1.05rem/1.55 "Segoe UI",sans-serif}header,main,footer{width:min(90%,60rem);margin:auto}header,footer{padding:1.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}header{border-bottom:1px solid #9eafa5}header strong{letter-spacing:.12em}a{color:#235844;text-underline-offset:.23em}main{padding:clamp(2rem,7vw,5rem) 0}h1{font:normal clamp(3.6rem,10vw,7rem)/1 Georgia,serif;letter-spacing:-.06em;margin:.25em 0}h2{font:normal 2rem/1.2 Georgia,serif;margin:0 0 1rem}section{background:#153e33;color:#f1f7eb;padding:clamp(1.2rem,5vw,3rem);border-radius:1rem;margin-top:2.5rem}section p{max-width:38rem}img{max-width:100%;height:auto;background:white;display:block}button{font:inherit;padding:.55rem 1rem;border:1px solid #bbd1bd;border-radius:.4rem;color:#153e33;background:#edf5d9;cursor:pointer}small{display:block;margin:1rem 0;font-size:.9rem;color:#d3e5d8}footer{border-top:1px solid #9eafa5}a:focus-visible,button:focus-visible{outline:3px solid #cc8900;outline-offset:4px}
-</style>
-<header><strong>THE SLAYERS</strong><a href="https://www.geocaching.com/p/?u=slayer1009">Geocaching profile</a></header>
-<main><p>Geocaching field journal</p><h1>The Slayers</h1><p>Follow slayer1009’s finds and hides.</p>
-<section aria-labelledby="progress"><h2 id="progress">Caching progress</h2>
-<img id="card" width="330" height="60" src="https://project-gc.com/StatBar/slayer1009" alt="Project-GC statistics for slayer1009, including finds and hides">
-<p>Totals come from Project-GC and may take time to reflect a new log.</p>
-<button id="refresh" type="button">Refresh stats</button><small id="status" role="status"></small></section></main>
-<footer><span>slayer1009</span><a href="https://github.com/cryptoferd/theslayers">View on GitHub</a></footer>
-<script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap">
+<a class="brand" href="#home">The Slayers</a>
+<nav aria-label="Main navigation"><a href="#progress">Progress</a><a href="#blog">Blog</a><a href="#gallery">Gallery</a></nav>
+</header>
+<main id="home">
+<div class="hero"><div class="wrap">
+<p class="eyebrow">Geocaching field journal</p>
+<h1>The Slayers</h1>
+<p class="intro">For anyone who sees a hollow stump and thinks,<br>“I’d hide something there.” Welcome to the hunt.</p>
+</div></div>
+<div class="wrap">
+<section class="progress" id="progress">
+<div><p class="eyebrow">slayer1009</p><h2>Caching progress</h2><a href="https://www.geocaching.com/p/?u=slayer1009">Geocaching profile</a></div>
+<div class="stats"><img id="card" width="330" height="60" src="https://project-gc.com/StatBar/slayer1009" alt="Project-GC statistics for slayer1009, including finds and hides">
+<div class="controls"><button id="refresh" type="button">Refresh stats</button><small id="status" role="status"></small></div>
+<small>New logs appear after Project-GC updates.</small></div>
+</section>
+<div class="journal">
+<section id="blog"><p class="eyebrow">Blog</p><h2>Field notes</h2>
+<p>The first entry is still out on the trail. Check back for stories from the hunt.</p></section>
+<section id="gallery"><p class="eyebrow">Gallery</p><h2>Trail photos</h2>
+<p>No photos yet. There’s room here for muddy boots, strange trees, and the view along the way.</p></section>
+</div></div>
+</main>
+<footer class="wrap"><span>The Slayers</span><a href="https://github.com/cryptoferd/theslayers">View on GitHub</a></footer><script>
 const card = document.getElementById('card');
 const statusLine = document.getElementById('status');
 function report() {
@@ -29,4 +48,5 @@ if (card.complete) report();
 document.getElementById('refresh').addEventListener('click', refresh);
 setInterval(() => { if (!document.hidden) refresh(); }, 900000);
 </script>
-</html>
+</body></html>
+

@@ -1,0 +1,32 @@
+:root { color-scheme: dark; font: 100%/1.6 "Segoe UI", sans-serif; background: #1c151b; color: #f8efdf; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { width: min(90%, 72rem); margin-inline: auto; }
+header, footer, nav, .controls { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
+header, footer { justify-content: space-between; padding-block: 1.1rem; }
+nav { gap: clamp(.8rem, 3vw, 2rem); }
+a { color: #efd3bf; text-underline-offset: .3em; }
+nav a, .brand { text-decoration: none; }
+a:hover { text-decoration: underline; color: white; }
+.brand { font: bold 1.5rem Georgia, serif; }
+.hero { padding-block: clamp(4rem, 9vw, 8rem); background-color: #39202c; background-image: linear-gradient(90deg,rgba(36,16,25,.97),rgba(62,25,37,.8) 42%,rgba(48,26,53,.4)),url("forest.jpg"); background-position: center 53%; background-size: cover; border-block: 1px solid #65505a; }
+h1, h2 { font-family: Georgia, serif; font-weight: normal; line-height: 1.08; }
+h1 { margin: .15em 0; font-size: clamp(4rem, 10vw, 8rem); letter-spacing: -.055em; }
+h2 { margin: .25em 0 .45em; font-size: clamp(2rem, 4vw, 3.1rem); }
+.eyebrow { font-size: .88rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 650; color: #efbda9; margin: 0; }
+.intro { font-size: clamp(1rem, 2vw, 1.23rem); }
+.progress, .journal { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 4vw, 4rem); margin-block: 2rem; }
+section { scroll-margin-top: 1rem; }
+.progress, .journal section { padding: clamp(1.25rem, 4vw, 3rem); }
+.progress { align-items: center; background: #392128; border: 1px solid #69424a; }
+.journal section { background: #302232; border-top: 2px solid #926477; }
+.journal section:last-child { background: #312225; border-color: #ad705c; }
+.journal p:last-child { color: #dfceca; max-width: 38ch; }
+.stats { min-width: 0; }
+img { max-width: 100%; height: auto; display: block; }
+.controls { margin-block: .85rem .45rem; }
+button { font: inherit; cursor: pointer; background: #51343d; color: #fff4ea; border: 1px solid #a27a80; border-radius: .25rem; padding: .35rem .8rem; }
+small { font-size: .875rem; color: #e2ccc8; }
+footer { border-top: 1px solid #604553; }
+:focus-visible { outline: 3px solid #ffc9aa; outline-offset: 4px; }
+@media (max-width: 44rem) { .progress, .journal { grid-template-columns: 1fr; } }
