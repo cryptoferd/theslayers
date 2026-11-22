@@ -30,3 +30,12 @@ small { font-size: .875rem; color: #e2ccc8; }
 footer { border-top: 1px solid #604553; }
 :focus-visible { outline: 3px solid #ffc9aa; outline-offset: 4px; }
 @media (max-width: 44rem) { .progress, .journal { grid-template-columns: 1fr; } }
+.admin { max-width: 48rem; padding-block: 2rem 4rem; }
+.admin h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+.admin form { background: #35232e; padding: clamp(1.2rem, 4vw, 2rem); margin-block: 1rem; border: 1px solid #69424a; }
+.admin label { display: block; margin-block: 1rem; }
+.admin [hidden] { display: none; }
+.admin input, .admin select, .admin textarea { display: block; width: 100%; margin-top: .35rem; padding: .65rem; background: #211920; color: #fff4ea; border: 1px solid #a27a80; font: inherit; }
+.admin button:disabled { opacity: .65; }
+.journal article { border-top: 1px solid #755562; overflow-wrap: anywhere; }
+.journal article p { white-space: pre-wrap; }
