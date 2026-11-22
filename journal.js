@@ -10,7 +10,7 @@ async function loadJournal() {
     const title = document.createElement("h3");
     title.textContent = entry.title;
     article.append(title);
-    if (entry.kind === "gallery" && entry.photo?.startsWith("https://")) {
+    if (entry.photo?.startsWith("https://")) {
       const img = document.createElement("img");
       img.src = entry.photo;
       img.alt = entry.body;
@@ -29,3 +29,4 @@ loadJournal().catch(() => {
     document.querySelector("#" + id + " > p:last-child").textContent = "Entries could not be loaded. Refresh to try again.";
   }
 });
+
