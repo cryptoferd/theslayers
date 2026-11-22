@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Slayers | Geocaching field journal</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eff3ed;color:#142e25;font:1.05rem/1.55 "Segoe UI",sans-serif}header,main,footer{width:min(90%,60rem);margin:auto}header,footer{padding:1.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}header{border-bottom:1px solid #9eafa5}header strong{letter-spacing:.12em}a{color:#235844;text-underline-offset:.23em}main{padding:clamp(2rem,7vw,5rem) 0}h1{font:normal clamp(3.6rem,10vw,7rem)/1 Georgia,serif;letter-spacing:-.06em;margin:.25em 0}h2{font:normal 2rem/1.2 Georgia,serif;margin:0 0 1rem}section{background:#153e33;color:#f1f7eb;padding:clamp(1.2rem,5vw,3rem);border-radius:1rem;margin-top:2.5rem}section p{max-width:38rem}img{max-width:100%;height:auto;background:white;display:block}button{font:inherit;padding:.55rem 1rem;border:1px solid #bbd1bd;border-radius:.4rem;color:#153e33;background:#edf5d9;cursor:pointer}small{display:block;margin:1rem 0;font-size:.9rem;color:#d3e5d8}footer{border-top:1px solid #9eafa5}a:focus-visible,button:focus-visible{outline:3px solid #cc8900;outline-offset:4px}
+</style>
+<header><strong>THE SLAYERS</strong><a href="https://www.geocaching.com/p/?u=slayer1009">Geocaching profile</a></header>
+<main><p>Geocaching field journal</p><h1>The Slayers</h1><p>Follow slayer1009’s finds and hides.</p>
+<section aria-labelledby="progress"><h2 id="progress">Caching progress</h2>
+<img id="card" width="330" height="60" src="https://project-gc.com/StatBar/slayer1009" alt="Project-GC statistics for slayer1009, including finds and hides">
+<p>Totals come from Project-GC and may take time to reflect a new log.</p>
+<button id="refresh" type="button">Refresh stats</button><small id="status" role="status"></small></section></main>
+<footer><span>slayer1009</span><a href="https://github.com/cryptoferd/theslayers">View on GitHub</a></footer>
+<script>
+const card = document.getElementById('card');
+const statusLine = document.getElementById('status');
+function report() {
+  statusLine.textContent = card.naturalWidth ? 'Card loaded at ' + new Date().toLocaleTimeString([], {hour:'numeric', minute:'2-digit'}) : 'The stats card is unavailable. Try refreshing in a moment.';
+}
+function refresh() {
+  statusLine.textContent = 'Loading stats…';
+  card.src = 'https://project-gc.com/StatBar/slayer1009?t=' + Date.now();
+}
+card.addEventListener('load', report);
+card.addEventListener('error', report);
+if (card.complete) report();
+document.getElementById('refresh').addEventListener('click', refresh);
+setInterval(() => { if (!document.hidden) refresh(); }, 900000);
+</script>
+</html>
