@@ -1,21 +1,17 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>Admin dashboard | The Slayers</title><link rel="stylesheet" href="../style.css">
-<script src="admin.js" defer></script></head><body>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin dashboard | The Slayers</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
 <header class="wrap"><a class="brand" href="../">The Slayers</a><a href="../">Back to journal</a></header>
-<main class="wrap admin"><h1>Admin dashboard</h1>
-<form id="login"><h2>Keeper’s entrance</h2>
-<p>Sign in with a fine-grained GitHub token for <strong>cryptoferd/theslayers</strong>. Select only this repository and grant Contents read and write. Your session ends when you reload or sign out.</p>
-<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noreferrer">Create a GitHub token</a>
-<label>Access token<input id="token" type="password" required autocomplete="off" spellcheck="false"></label>
-<button>Sign in</button></form>
-<div id="desk" hidden><p id="identity"></p><button id="logout">Sign out</button>
-<form id="editor"><h2>New journal entry</h2>
-<label>Publish to<select id="kind"><option value="blog">Field notes</option><option value="gallery">Trail photos</option></select></label>
-<label>Title<input id="title" required maxlength="160"></label>
-<label id="photoLabel" hidden>Photo URL (HTTPS)<input type="url" id="photo" placeholder="https://"></label>
-<label><span id="bodyLabel">Post</span><textarea id="body" required rows="6" maxlength="20000"></textarea></label>
-<button>Publish to site</button></form></div>
-<p id="notice" role="status" aria-live="polite"></p></main></body></html>
+<main class="wrap admin">
+<h1>Admin dashboard</h1>
+<section class="admin-login"><h2>Keeper’s entrance</h2>
+<p>Sign in to publish field notes and trail photos. Your GitHub account is your journal login.</p>
+<a class="login-link" href="https://app.pagescms.org/cryptoferd/theslayers/main">Continue to Pages CMS</a>
+<details><summary>First time signing in?</summary><p>Choose <strong>Sign in with GitHub</strong>. On GitHub, use the account that manages this site. When asked to install Pages CMS, choose <strong>Only select repositories</strong> and select <strong>theslayers</strong>. Open the journal editor to add your entry.</p></details>
+</section></main></body></html>

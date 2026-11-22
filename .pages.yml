@@ -1,0 +1,28 @@
+content:
+  - name: journal
+    label: Field notes and trail photos
+    type: file
+    path: journal.json
+    format: json
+    list: true
+    fields:
+      - name: kind
+        label: Section
+        type: select
+        required: true
+        options:
+          values: [blog, gallery]
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: body
+        label: Post or photo description
+        type: text
+        required: true
+      - name: photo
+        label: Photo URL (HTTPS, for gallery entries)
+        type: string
+      - name: date
+        label: Entry date
+        type: date
